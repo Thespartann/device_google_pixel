@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 # Copyright (C) 2017-2019 The LineageOS Project
+# Copyright (C) 2018 The PixelExperience Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,8 +21,8 @@ INITIAL_COPYRIGHT_YEAR=2017
 
 # Load extractutils and do some sanity checks
 MY_DIR=$PWD
-LINEAGE_ROOT=$MY_DIR/../../..
-HELPER=$LINEAGE_ROOT/vendor/lineage/build/tools/extract_utils.sh
+AOSP_ROOT=$MY_DIR/../../..
+HELPER=$AOSP_ROOT/vendor/aosp/build/tools/extract_utils.sh
 DEVICE=$1
 
 if [ ! -f $HELPER ]; then
@@ -38,7 +39,7 @@ if [ $# != 1 ]; then
 fi
 
 # Initialize the helper
-setup_vendor $DEVICE $VENDOR $LINEAGE_ROOT
+setup_vendor $DEVICE $VENDOR $AOSP_ROOT
 
 # Copyright headers and guards
 write_headers
